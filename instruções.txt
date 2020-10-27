@@ -1,0 +1,43 @@
+instruções de como montar um mini backend para exbição local de APIs.
+primeiro é necessário copiar as informações do corpo da API
+salvar em um arquivo com extensão .json
+é necessário envolver o conteudo em chaves   {tranformando em um objeto}
+e nomear o objeto
+ex: 
+
+{
+  "countries": [
+        {
+        "name": "Afghanistan",
+        "topLevelDomain": [".af"],
+        "alpha2Code": "AF"
+        }
+    ]
+}
+
+
+
+1 - rodar o comando na pasta backend o comando
+        npm init -y
+
+
+2 - rodar o comando   (instalação de dependencia)
+        npm install --save-dev json-server
+
+
+3 - abrir o package.json e na seção script,  inserir os cripts abaixo:
+    o nome do arquivo .json deve ser o mesmo do arquivo de onde se quer buscar os dados de API
+    o nome do server é determinado pelo programador, server1, servermilagre, s1, s100000000 e etc
+    
+        "serve1": "json-server --watch countries.json --port 3001",
+         "serve2": "json-server --watch users.json --port 3002"
+
+
+4 - rodar o comando abaixo:  em abas diferenentes do cmd
+        npm run server1
+        npm run server2
+
+
+5 - usar o localhost seguido da porta  / o nomedo arquivo
+    ex:    localhost:3001/countries
+    ex:    localhost:3002/users
